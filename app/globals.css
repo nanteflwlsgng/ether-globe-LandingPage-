@@ -13,3 +13,39 @@
      background-color: #050505; /* Un fond noir spatial */
      overflow: hidden; 
    }
+
+@keyframes glitch-skew {
+  0% { transform: skew(0deg); }
+  20% { transform: skew(-5deg); }
+  24% { transform: skew(50deg); opacity: 0.5; }
+  25% { transform: skew(0deg); opacity: 1; }
+  70% { transform: skew(-2deg); }
+  71% { transform: skew(10deg); }
+  75% { transform: skew(0deg); }
+}
+
+@keyframes noise {
+  0% { transform: translate(0,0) }
+  10% { transform: translate(-5%,-5%) }
+  20% { transform: translate(-10%,5%) }
+  30% { transform: translate(5%,-10%) }
+  40% { transform: translate(-5%,15%) }
+  50% { transform: translate(-10%,5%) }
+  60% { transform: translate(15%,0) }
+  70% { transform: translate(0,10%) }
+  80% { transform: translate(-15%,0) }
+  90% { transform: translate(10%,5%) }
+  100% { transform: translate(5%,0) }
+}
+
+.glitch-overlay {
+  background: rgba(0, 0, 0, 1);
+  animation: glitch-skew 1s infinite linear alternate-reverse;
+}
+
+.noise-bg {
+  background-image: url('https://media.giphy.com/media/oEI9uWUzn938w/giphy.gif'); /* Texture de bruit statique */
+  opacity: 0.15;
+  background-size: cover;
+  animation: noise 0.2s infinite;
+}
